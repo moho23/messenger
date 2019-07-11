@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Signup">
+   <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <Label layoutX="35.0" layoutY="142.0" text="Name :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="318.0" layoutY="144.0" text="Lastname :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="187.0" text="Username :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="319.0" layoutY="187.0" text="Password :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="233.0" text="Number :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="316.0" layoutY="233.0" text="Photoaddress :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="35.0" layoutY="280.0" text="Email :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="316.0" layoutY="280.0" text="Status :">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="241.0" layoutY="39.0" prefHeight="54.0" prefWidth="117.0" style="-fx-background-color: orange;" text="Signup">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="nameTextField" layoutX="97.0" layoutY="142.0" />
+      <TextField fx:id="usernameTextField" layoutX="125.0" layoutY="185.0" />
+      <TextField fx:id="numberTextField" layoutX="109.0" layoutY="231.0" />
+      <TextField fx:id="emailTextField" layoutX="97.0" layoutY="278.0" prefHeight="25.0" prefWidth="202.0" />
+      <TextField fx:id="lastnameTextField" layoutX="414.0" layoutY="142.0" />
+      <TextField fx:id="passwordTextField" layoutX="414.0" layoutY="185.0" />
+      <TextField fx:id="photoaddressTextField" layoutX="427.0" layoutY="231.0" />
+      <TextField fx:id="statusTextField" layoutX="375.0" layoutY="278.0" prefHeight="25.0" prefWidth="211.0" />
+      <Button fx:id="submitButton" layoutX="274.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="submit" />
+   </children>
+</AnchorPane>

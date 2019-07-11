@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
+   <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <PasswordField fx:id="passwordField" layoutX="226.0" layoutY="235.0" />
+      <TextField fx:id="usernameField" layoutX="226.0" layoutY="200.0" />
+      <Label layoutX="127.0" layoutY="200.0" text="Username : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="235.0" text="Password : ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="submitButton" layoutX="274.0" layoutY="286.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="submit" />
+      <TextField layoutX="243.0" layoutY="94.0" prefHeight="65.0" prefWidth="114.0" style="-fx-background-color: orange;" text="Login">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
