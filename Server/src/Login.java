@@ -3,26 +3,37 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Menu implements Initializable {
+public class Login implements Initializable {
 
     @FXML
     Button backButton;
 
     @FXML
-    Button LoginButton;
+    Button submitButton;
 
     @FXML
-    Button SignupButton;
+    TextField usernameField;
 
+    @FXML
+    TextField passwordField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backButton.setOnAction(event -> {
+            try {
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Menu.fxml"))));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        submitButton.setOnAction(event -> {
             try {
                 Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Start.fxml"))));
             } catch (IOException e) {
@@ -30,20 +41,12 @@ public class Menu implements Initializable {
             }
         });
 
-        LoginButton.setOnAction(event -> {
-            try {
-                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Login.fxml"))));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        usernameField.setOnAction(event -> {
+
         });
 
-        SignupButton.setOnAction(event -> {
-            try {
-                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Signup.fxml"))));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        passwordField.setOnAction(event -> {
+
         });
     }
 }

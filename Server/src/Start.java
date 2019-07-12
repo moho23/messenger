@@ -18,9 +18,9 @@ public class Start implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         startPage.setOnAction(event -> {
             try {
-                Server.stage.setScene(FXMLLoader.load(getClass().getResource("Menu.fxml")));
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Menu.fxml"))));
             } catch (IOException e) {
-                e.getMessage();
+                e.printStackTrace();
             }
         });
     }
