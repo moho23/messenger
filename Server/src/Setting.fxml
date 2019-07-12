@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Setting">
+   <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <Button fx:id="changefirstnameButton" layoutX="22.0" layoutY="86.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="chaneFirstName :  ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changelastnameButton" layoutX="22.0" layoutY="128.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changeLastName :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeusernameButton" layoutX="22.0" layoutY="175.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changeUsername :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changephptpaddressButton" layoutX="320.0" layoutY="128.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changePhotoAddress :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changestatusButton" layoutX="321.0" layoutY="175.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changeStatus :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changenumberButton" layoutX="320.0" layoutY="86.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changeNumber :">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changepasswordButton" layoutX="22.0" layoutY="220.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changePassword : ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeemailButton" layoutX="320.0" layoutY="220.0" mnemonicParsing="false" style="-fx-background-color: orange;" text="changeEmail   ">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="changefirstnameTextField" layoutX="151.0" layoutY="88.0" />
+      <TextField fx:id="changelastnameTextField" layoutX="151.0" layoutY="130.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="changeusernameTextField" layoutX="151.0" layoutY="177.0" />
+      <TextField fx:id="changepasswordTextField" layoutX="151.0" layoutY="222.0" />
+      <TextField fx:id="changenumberTextField" layoutX="438.0" layoutY="88.0" />
+      <TextField fx:id="changestatusTextField" layoutX="425.0" layoutY="177.0" prefHeight="25.0" prefWidth="162.0" />
+      <TextField fx:id="changeemailTextField" layoutX="428.0" layoutY="222.0" prefHeight="25.0" prefWidth="156.0" />
+      <TextField fx:id="changephotoaddressTextField" layoutX="473.0" layoutY="130.0" prefHeight="25.0" prefWidth="114.0" />
+      <Label layoutX="515.0" layoutY="10.0" text="Setting">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutButton" layoutX="151.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="Logout">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteaccountButton" layoutX="300.0" layoutY="309.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="DeleteAccount">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
