@@ -65,7 +65,7 @@ public class Signup implements Initializable {
             try {
                 UserDataBase userDataBase = new UserDataBase();
                 userDataBase.AddUser(user);
-//                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Search.fxml"))));
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Detail">
+   <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <Label layoutX="21.0" layoutY="104.0" text="Username : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="157.0" text="Firstname : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="214.0" text="Email : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="21.0" layoutY="268.0" text="Status : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="104.0" text="Number : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="305.0" layoutY="157.0" text="Lastname : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="304.0" layoutY="214.0" text="Photoaddress : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="settingButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Setting" />
+      <Text fx:id="usernameText" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="usernameText1" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="usernameText11" layoutX="128.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="firstnameText" layoutX="128.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="emailText" layoutX="96.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="194.0498046875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="numberText" layoutX="394.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="lastnameText" layoutX="400.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="photoaddressText" layoutX="434.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.0">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="statusText" layoutX="96.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="472.0498046875">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

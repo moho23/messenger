@@ -28,8 +28,8 @@ public class UserDataBase {
         preparedStatement.executeUpdate();
     }
 
-    public ArrayList<String> getUserusernames() throws Exception {
-        preparedStatement = connection.prepareStatement("select username from users");
+    public ArrayList<String> getUserUsernames() throws Exception {
+        preparedStatement = connection.prepareStatement("select username from public.messengerdb");
         ResultSet resultSet = preparedStatement.executeQuery();
         ArrayList<String> usernames = new ArrayList<>();
         while (resultSet.next()) {
@@ -39,7 +39,7 @@ public class UserDataBase {
     }
 
     public ArrayList<String> getUsers(String username) throws Exception {
-        preparedStatement = connection.prepareStatement("select * from users where username = ?");
+        preparedStatement = connection.prepareStatement("select * from public.messengerdb where username = ?");
         preparedStatement.setString(1, username);
         ArrayList<String> details = new ArrayList<>();
         ResultSet resultSet = preparedStatement.executeQuery();
@@ -47,8 +47,8 @@ public class UserDataBase {
             details.add(resultSet.getString("firstName"));
             details.add(resultSet.getString("lastName"));
             details.add(resultSet.getString("username"));
-            details.add(resultSet.getString("number"));
             details.add(resultSet.getString("password"));
+            details.add(resultSet.getString("number"));
             details.add(resultSet.getString("photoAddress"));
             details.add(resultSet.getString("email"));
             details.add(resultSet.getString("status"));
@@ -57,63 +57,63 @@ public class UserDataBase {
     }
 
     public void changeFirstname(String username,String newFirstName) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set firstName = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set firstName = ? where username = ?");
         preparedStatement.setString(1,newFirstName);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changeLastname(String username,String newLastName) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set lastName = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set lastName = ? where username = ?");
         preparedStatement.setString(1,newLastName);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changePassword(String username,String newPassword) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set password = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set password = ? where username = ?");
         preparedStatement.setString(1,newPassword);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changeEmail(String username,String newEmail) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set email = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set email = ? where username = ?");
         preparedStatement.setString(1,newEmail);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changeStatus(String username,String newStatus) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set status = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set status = ? where username = ?");
         preparedStatement.setString(1,newStatus);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changeNumber(String username,String newNumber) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set number = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set number = ? where username = ?");
         preparedStatement.setString(1,newNumber);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changePhotoAddress(String username,String newPhotoAddress) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set photoAddress = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set photoAddress = ? where username = ?");
         preparedStatement.setString(1,newPhotoAddress);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void changeUsername(String username,String newUsername) throws Exception {
-        preparedStatement = connection.prepareStatement("update users set username = ? where username = ?");
+        preparedStatement = connection.prepareStatement("update public.messengerdb set username = ? where username = ?");
         preparedStatement.setString(1,newUsername);
         preparedStatement.setString(2,username);
         preparedStatement.executeUpdate();
     }
 
     public void deleteUser(String username) throws Exception {
-        preparedStatement = connection.prepareStatement("delete from users where username = ?");
+        preparedStatement = connection.prepareStatement("delete from public.messengerdb where username = ?");
         preparedStatement.setString(1,username);
         preparedStatement.executeUpdate();
     }
