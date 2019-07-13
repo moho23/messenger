@@ -16,18 +16,18 @@ public class Client {
 
             DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
             DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-
-            while (true) {
-                Scanner scanner = new Scanner(System.in);
-                System.out.println("Client: ");
-                String msg;
-                msg = scanner.nextLine();
-                dataOutputStream.writeUTF(msg);
-
-                String rsp = dataInputStream.readUTF();
-                System.out.println("Server said: " + rsp);
-                if (rsp.equals("bye")) break;
-            }
+//
+//            while (true) {
+//                Scanner scanner = new Scanner(System.in);
+//                System.out.println("Client: ");
+//                String msg;
+//                msg = scanner.nextLine();
+//                dataOutputStream.writeUTF(msg);
+//
+//                String rsp = dataInputStream.readUTF();
+//                System.out.println("Server said: " + rsp);
+//                if (rsp.equals("bye")) break;
+//            }
         } catch (IOException e) {
             System.out.println("EXIT");
         }
