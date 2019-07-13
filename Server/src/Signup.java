@@ -53,39 +53,22 @@ public class Signup implements Initializable {
         });
 
         submitButton.setOnAction(event -> {
+            String firstname = nameTextField.getText();
+            String lastname = lastnameTextField.getText();
+            String username = usernameTextField.getText();
+            String password = passwordTextField.getText();
+            String email = emailTextField.getText();
+            String status = statusTextField.getText();
+            String number = numberTextField.getText();
+            String photoaddress = photoaddressTextField.getText();
+            User user = new User(firstname,lastname,number,photoaddress,password,username,status,email);
             try {
-                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource(""))));
-            } catch (IOException e) {
+                UserDataBase userDataBase = new UserDataBase();
+                userDataBase.AddUser(user);
+//                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
+            } catch (Exception e) {
                 e.printStackTrace();
             }
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
-        });
-
-        submitButton.setOnAction(event -> {
-
         });
     }
 }
