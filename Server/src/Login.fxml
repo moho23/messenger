@@ -7,27 +7,34 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Login">
    <children>
       <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
-      <PasswordField fx:id="passwordField" layoutX="226.0" layoutY="235.0" />
-      <TextField fx:id="usernameField" layoutX="226.0" layoutY="200.0" />
-      <Label layoutX="127.0" layoutY="200.0" text="Username : ">
+      <PasswordField fx:id="passwordField" layoutX="226.0" layoutY="214.0" prefHeight="37.0" prefWidth="200.0" />
+      <TextField fx:id="usernameField" layoutX="226.0" layoutY="163.0">
+         <font>
+            <Font size="16.0" />
+         </font></TextField>
+      <Label layoutX="128.0" layoutY="169.0" text="Username : ">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="127.0" layoutY="235.0" text="Password : ">
+      <Label layoutX="131.0" layoutY="220.0" text="Password : ">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="submitButton" layoutX="274.0" layoutY="286.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="submit" />
-      <TextField layoutX="243.0" layoutY="94.0" prefHeight="65.0" prefWidth="114.0" style="-fx-background-color: orange;" text="Login">
+      <Button fx:id="submitButton" layoutX="284.0" layoutY="299.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="submit" />
+      <Label layoutX="256.0" layoutY="78.0" style="-fx-background-color: orange;" text=" Login ">
          <font>
-            <Font size="30.0" />
+            <Font size="36.0" />
          </font>
-      </TextField>
+      </Label>
+      <Text fx:id="wronginputText" layoutX="286.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>

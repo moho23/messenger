@@ -83,7 +83,6 @@ public class Setting implements Initializable {
                 UserDataBase userDataBase = new UserDataBase();
                 userDataBase.deleteUser(Login.username);
                 successfullydeletedText.setText("Successfully Deleted!");
-                Thread.sleep(550);
                 Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Start.fxml"))));
             } catch (Exception e) {
                 e.printStackTrace();

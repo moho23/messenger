@@ -46,7 +46,7 @@ public class Search implements Initializable {
                     if (username.equals(userDataBase.getUserUsernames().get(i))) {
                         checkUsernameNotFound = false;
                         Thread.sleep(850);
-                        Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Menu.fxml"))));
+                        Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
                     }
                 }
                 if (checkUsernameNotFound) {
