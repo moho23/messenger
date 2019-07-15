@@ -18,7 +18,10 @@ public class Search implements Initializable {
     Text usernamenotfoundText;
 
     @FXML
-    Button backButton;
+    Button loginButton;
+
+    @FXML
+    Button signupButton;
 
     @FXML
     Button searchButton;
@@ -29,9 +32,17 @@ public class Search implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        backButton.setOnAction(event -> {
+        loginButton.setOnAction(event -> {
             try {
                 Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Login.fxml"))));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        signupButton.setOnAction(event -> {
+            try {
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Signup.fxml"))));
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -21,7 +21,7 @@ public class UserDataBase {
         preparedStatement.setString(2, user.getLastName());
         preparedStatement.setString(3, user.getUserName());
         preparedStatement.setString(4, user.getNumber());
-        preparedStatement.setString(5, user.getPassword());
+        preparedStatement.setString(5, MD5.getMD5Password(user.getPassword()));
         preparedStatement.setString(6, user.getPhotoAddress());
         preparedStatement.setString(7, user.getEmail());
         preparedStatement.setString(8, user.getStatus());

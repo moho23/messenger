@@ -43,7 +43,7 @@ public class Login implements Initializable {
 
         submitButton.setOnAction(event -> {
             username = usernameField.getText();
-            password = passwordField.getText();
+            password = MD5.getMD5Password(passwordField.getText());
             try {
                 UserDataBase userDataBase = new UserDataBase();
                 if (userDataBase.getUsers(username).isEmpty() || !(userDataBase.getUsers(username).get(3).equals(password))) {

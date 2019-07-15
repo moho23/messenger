@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Search">
    <children>
-      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <Button fx:id="loginButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Login" />
       <TextField fx:id="enterusernameTextField" layoutX="230.0" layoutY="200.0" style="-fx-background-color: orange;">
          <font>
             <Font size="24.0" />
@@ -31,5 +31,6 @@
             <Font size="17.0" />
          </font>
       </Text>
+      <Button fx:id="signupButton" layoutX="75.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Signup" />
    </children>
 </AnchorPane>
