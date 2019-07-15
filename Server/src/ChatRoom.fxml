@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: lightyellow;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChatRoom">
+   <children>
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
+      <Button fx:id="settingButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Setting" />
+      <Button fx:id="detailButton" layoutX="477.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Detail" />
+      <TextArea fx:id="chatPageBox" layoutX="35.0" layoutY="127.0" prefHeight="200.0" prefWidth="529.0" />
+      <Button fx:id="sendButton" layoutX="524.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="Send" />
+      <Button fx:id="emojiButton" layoutX="34.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: yellow;" text="Emoji" />
+      <TextField fx:id="sendmessageTextField" layoutX="93.0" layoutY="337.0" prefHeight="33.0" prefWidth="415.0" style="-fx-background-color: orange;" />
+      <Label layoutX="35.0" layoutY="77.0" prefHeight="33.0" prefWidth="70.0" text="username">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Text fx:id="usernameText" layoutX="163.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="lastseenText" layoutX="437.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
