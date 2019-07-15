@@ -5,14 +5,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
-
-import javax.jws.soap.SOAPBinding;
+import javafx.stage.FileChooser;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Setting implements Initializable {
 
+    public static int bool = 0;
+    public static String photoAddress;
 
     @FXML
     Button changefirstnameButton;
@@ -60,9 +62,6 @@ public class Setting implements Initializable {
     TextField changepasswordTextField;
 
     @FXML
-    TextField changephotoaddressTextField;
-
-    @FXML
     TextField changeemailTextField;
 
     @FXML
@@ -73,6 +72,9 @@ public class Setting implements Initializable {
 
     @FXML
     Text successfullydeletedText;
+
+    @FXML
+    Text photoaddressText;
 
 
     @Override
@@ -99,7 +101,7 @@ public class Setting implements Initializable {
 
         backButton.setOnAction(event -> {
             try {
-                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Detail.fxml"))));
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -146,11 +148,20 @@ public class Setting implements Initializable {
             }
         });
 
+        FileChooser.ExtensionFilter IF = new FileChooser.ExtensionFilter("Image Files", "*.jpj","*.png" );
+        FileChooser chooser = new FileChooser();
+        chooser.getExtensionFilters().add(IF);
         changephotoaddressButton.setOnAction(event -> {
-            String changePAB = changephotoaddressTextField.getText();
+            File file = chooser.showOpenDialog(Server.stage);
+
+            if (file != null) {
+                bool = 1;
+            }
+            photoaddressText.setText(file.toURI().toString());
+            photoAddress = file.toURI().toString();
             try {
                 UserDataBase userDataBase = new UserDataBase();
-                userDataBase.changePhotoAddress(Login.username, changePAB);
+                userDataBase.changePhotoAddress(Login.username,photoAddress);
             } catch (Exception e) {
                 e.printStackTrace();
             }

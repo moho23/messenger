@@ -1,8 +1,12 @@
+import com.sun.javafx.iio.ImageStorage;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
@@ -33,20 +37,20 @@ public class Detail implements Initializable {
     Text emailText;
 
     @FXML
-    Text photoaddressText;
+    Text numberText;
 
     @FXML
-    Text numberText;
+    Circle photoCircle;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-//        backButton.setOnAction(event -> {
-//            try {
-//                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        });
+        backButton.setOnAction(event -> {
+            try {
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatRoom.fxml"))));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         settingButton.setOnAction(event -> {
             try {
@@ -69,11 +73,15 @@ public class Detail implements Initializable {
             firstnameText.setText(userDataBase.getUsers(Login.username).get(0));
             lastnameText.setText(userDataBase.getUsers(Login.username).get(1));
             numberText.setText(userDataBase.getUsers(Login.username).get(4));
-            photoaddressText.setText(userDataBase.getUsers(Login.username).get(6));
-            statusText.setText(userDataBase.getUsers(Login.username).get(5));
-            emailText.setText(userDataBase.getUsers(Login.username).get(7));
+            statusText.setText(userDataBase.getUsers(Login.username).get(7));
+            emailText.setText(userDataBase.getUsers(Login.username).get(6));
         } catch (Exception e) {
             e.printStackTrace();
+        }
+        if (Signup.bool == 1 || Setting.bool == 1) {
+            Image image = new Image(Signup.photoAddress);
+            photoCircle.setId(Signup.photoAddress);
+            photoCircle.setFill(new ImagePattern(image));
         }
     }
 }

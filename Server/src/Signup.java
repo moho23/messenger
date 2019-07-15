@@ -4,12 +4,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Signup implements Initializable {
+
+    public static String photoAddress;
+    public static int bool = 0;
 
     @FXML
     Button backButton;
@@ -33,13 +40,17 @@ public class Signup implements Initializable {
     TextField numberTextField;
 
     @FXML
-    TextField photoaddressTextField;
+    Text photoaddressText;
 
     @FXML
     TextField emailTextField;
 
     @FXML
     TextField statusTextField;
+
+    @FXML
+    Button choosephotoButton;
+
 
 
     @Override
@@ -52,6 +63,21 @@ public class Signup implements Initializable {
             }
         });
 
+
+        FileChooser.ExtensionFilter IF = new FileChooser.ExtensionFilter("Image Files", "*.jpj","*.png" );
+        FileChooser chooser = new FileChooser();
+        chooser.getExtensionFilters().add(IF);
+        choosephotoButton.setOnAction(event -> {
+        File file = chooser.showOpenDialog(Server.stage);
+
+            if (file != null) {
+                bool = 1;
+            }
+            photoaddressText.setText(file.toURI().toString());
+            photoAddress = file.toURI().toString();
+        });
+
+
         submitButton.setOnAction(event -> {
             String firstname = nameTextField.getText();
             String lastname = lastnameTextField.getText();
@@ -60,8 +86,7 @@ public class Signup implements Initializable {
             String email = emailTextField.getText();
             String status = statusTextField.getText();
             String number = numberTextField.getText();
-            String photoaddress = photoaddressTextField.getText();
-            User user = new User(firstname,lastname,number,photoaddress,password,username,status,email);
+            User user = new User(firstname,lastname,number,photoAddress,password,username,status,email);
             try {
                 UserDataBase userDataBase = new UserDataBase();
                 userDataBase.AddUser(user);

@@ -16,7 +16,7 @@ public class UserDataBase {
     }
 
     public void AddUser(User user) throws Exception {
-        preparedStatement = connection.prepareStatement("insert into public.messengerdb (firstname, lastname, username, number, password, email, status, photoaddress) values (?,?,?,?,?,?,?,?)");
+        preparedStatement = connection.prepareStatement("insert into public.messengerdb (firstname, lastname, username, number, password, photoaddress, email, status) values (?,?,?,?,?,?,?,?)");
         preparedStatement.setString(1, user.getName());
         preparedStatement.setString(2, user.getLastName());
         preparedStatement.setString(3, user.getUserName());
@@ -116,6 +116,10 @@ public class UserDataBase {
         preparedStatement = connection.prepareStatement("delete from public.messengerdb where username = ?");
         preparedStatement.setString(1,username);
         preparedStatement.executeUpdate();
+    }
+
+    public void getPictur(String username) throws Exception {
+
     }
 
     public void close() throws Exception {

@@ -49,7 +49,7 @@ public class Login implements Initializable {
                 if (userDataBase.getUsers(username).isEmpty() || !(userDataBase.getUsers(username).get(3).equals(password))) {
                     wronginputText.setText("Wrong Input!");
                 } else {
-                    Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Search.fxml"))));
+                    Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Detail.fxml"))));
                 }
             } catch (Exception e) {
                 e.printStackTrace();
