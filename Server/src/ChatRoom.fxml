@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -17,12 +18,12 @@
       <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="back" />
       <Button fx:id="settingButton" layoutX="534.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Setting" />
       <Button fx:id="detailButton" layoutX="477.0" layoutY="14.0" mnemonicParsing="false" style="-fx-background-color: lightgreen;" text="Detail" />
-      <TextArea fx:id="chatpageBox" layoutX="35.0" layoutY="127.0" prefHeight="200.0" prefWidth="529.0" />
+      <TextArea fx:id="chatpageBox" layoutX="55.0" layoutY="116.0" prefHeight="211.0" prefWidth="276.0" />
       <Button fx:id="sendButton" layoutX="524.0" layoutY="337.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="Send" />
       <TextField fx:id="sendmessageTextField" layoutX="93.0" layoutY="337.0" prefHeight="33.0" prefWidth="415.0" style="-fx-background-color: orange;" />
-      <Label layoutX="35.0" layoutY="77.0" prefHeight="33.0" prefWidth="70.0" text="username">
+      <Label layoutX="55.0" layoutY="81.0" prefHeight="33.0" prefWidth="93.0" text="username">
          <font>
-            <Font size="15.0" />
+            <Font size="19.0" />
          </font>
       </Label>
       <Text fx:id="usernameText" layoutX="163.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0">
@@ -44,5 +45,11 @@
               <MenuItem fx:id="fear" mnemonicParsing="false" text="Fear" />
         </items>
       </MenuButton>
+      <Label layoutX="389.0" layoutY="83.0" text="Online Users">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ListView fx:id="onlineusersListView" layoutX="376.0" layoutY="116.0" prefHeight="211.0" prefWidth="170.0" style="-fx-background-color: lightblue;" />
    </children>
 </AnchorPane>
