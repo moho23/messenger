@@ -1,52 +1,32 @@
-import java.io.*;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.Socket;
-import java.util.Scanner;
 
-class Client {
-    public static void main(String args[]) {
-        int port = 9999;
-        String hostIP = "127.0.0.1";
+public class Client extends Application {
+    public static DataInputStream dataInput;
+    public static DataOutputStream dataOutput;
 
-        try {
-            Socket socket = new Socket(hostIP, port);
+    static Stage stage;
+    public static void main(String[] args) throws IOException {
+        Socket socket = new Socket("localhost",3512);
+        dataOutput=new DataOutputStream(socket.getOutputStream());
+        dataInput=new DataInputStream(socket.getInputStream());
+        launch();
+    }
 
-            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
-            ObjectInputStream in = new ObjectInputStream((socket.getInputStream()));
-
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    while (true) {
-                        try {
-                            if (true) {
-                                String msg = (String)in.readObject();
-                                System.out.println(msg);
-                            }
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }
-                    }
-                }
-            }).start();
-
-            new Thread(new Runnable() {
-
-                @Override
-                public void run() {
-                    while (true) {
-                        try {
-                            String msg = new Scanner(System.in).nextLine();
-                            System.out.println(msg);
-                            out.writeObject(msg);
-                        } catch (Exception e) {
-                            System.out.println(e);
-                        }
-                    }
-                }
-            }).start();
-
-        } catch (Exception e) {
-            System.out.print(e);
-        }
+    @Override
+    public void start(Stage Stage) throws Exception {
+        stage=Stage;
+        Parent root = FXMLLoader.load(getClass().getResource("Start.fxml"));
+        Stage.setScene(new Scene(root,600,400));
+        Stage.setTitle("Client");
+        stage.alwaysOnTopProperty();
+        Stage.show();
     }
 }
