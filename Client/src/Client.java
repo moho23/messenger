@@ -1,35 +1,52 @@
-import java.awt.*;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
 
-/**
- * A command line client for the date server. Requires the IP address of
- * the server as the sole argument. Exits after printing the response.
- */
-public class Client {
-    public static void main(String[] args) {
-        try {
-            Socket socket = new Socket("localhost", 1234);
+class Client {
+    public static void main(String args[]) {
+        int port = 9999;
+        String hostIP = "127.0.0.1";
 
-            DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
-            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-//
-//            while (true) {
-//                Scanner scanner = new Scanner(System.in);
-//                System.out.println("Client: ");
-//                String msg;
-//                msg = scanner.nextLine();
-//                dataOutputStream.writeUTF(msg);
-//
-//                String rsp = dataInputStream.readUTF();
-//                System.out.println("Server said: " + rsp);
-//                if (rsp.equals("bye")) break;
-//            }
-        } catch (IOException e) {
-            System.out.println("EXIT");
+        try {
+            Socket socket = new Socket(hostIP, port);
+
+            ObjectOutputStream out = new ObjectOutputStream(socket.getOutputStream());
+            ObjectInputStream in = new ObjectInputStream((socket.getInputStream()));
+
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    while (true) {
+                        try {
+                            if (true) {
+                                String msg = (String)in.readObject();
+                                System.out.println(msg);
+                            }
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                    }
+                }
+            }).start();
+
+            new Thread(new Runnable() {
+
+                @Override
+                public void run() {
+                    while (true) {
+                        try {
+                            String msg = new Scanner(System.in).nextLine();
+                            System.out.println(msg);
+                            out.writeObject(msg);
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                    }
+                }
+            }).start();
+
+        } catch (Exception e) {
+            System.out.print(e);
         }
     }
 }
