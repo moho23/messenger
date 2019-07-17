@@ -4,7 +4,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
 
@@ -16,6 +15,13 @@ import java.util.ResourceBundle;
 public class Signup implements Initializable {
 
     public static String photoAddress;
+    public static String email;
+    public static String username ;
+    public static String password;
+    public static String number ;
+    public static String status;
+    public static String firstname ;
+    public static String lastname ;
     public static int bool = 0;
 
     @FXML
@@ -52,7 +58,6 @@ public class Signup implements Initializable {
     Button choosephotoButton;
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         backButton.setOnAction(event -> {
@@ -62,7 +67,6 @@ public class Signup implements Initializable {
                 e.printStackTrace();
             }
         });
-
 
         FileChooser.ExtensionFilter IF = new FileChooser.ExtensionFilter("Image Files", "*.jpj","*.png" );
         FileChooser chooser = new FileChooser();
@@ -77,21 +81,17 @@ public class Signup implements Initializable {
             photoAddress = file.toURI().toString();
         });
 
-
         submitButton.setOnAction(event -> {
-            String firstname = nameTextField.getText();
-            String lastname = lastnameTextField.getText();
-            String username = usernameTextField.getText();
-            String password = passwordTextField.getText();
-            String email = emailTextField.getText();
-            String status = statusTextField.getText();
-            String number = numberTextField.getText();
-            User user = new User(firstname,lastname,number,photoAddress,password,username,status,email);
+             firstname = nameTextField.getText();
+            lastname = lastnameTextField.getText();
+            username = usernameTextField.getText();
+            password = passwordTextField.getText();
+            email = emailTextField.getText();
+            status = statusTextField.getText();
+            number = numberTextField.getText();
             try {
-                UserDataBase userDataBase = new UserDataBase();
-                userDataBase.AddUser(user);
-                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Search.fxml"))));
-            } catch (Exception e) {
+                Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Verify.fxml"))));
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         });

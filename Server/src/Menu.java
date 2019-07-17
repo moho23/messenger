@@ -22,6 +22,7 @@ public class Menu implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
         backButton.setOnAction(event -> {
             try {
                 Server.stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("Start.fxml"))));

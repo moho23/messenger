@@ -6,12 +6,29 @@ import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import com.vdurmont.emoji.Emoji;
+import com.vdurmont.emoji.EmojiParser;
+import org.postgresql.shaded.com.ongres.scram.common.ScramAttributes;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Date;
 import java.util.ResourceBundle;
 
 public class ChatRoom implements Initializable {
+
+    Date date = new Date();
+    String datee = date.toString();
+    MessageDataBase messageDataBase;
+
+    {
+        try {
+            messageDataBase = new MessageDataBase();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 //    Server server = new Server();
 
@@ -48,6 +65,9 @@ public class ChatRoom implements Initializable {
     @FXML
     MenuItem fear;
 
+    @FXML
+    Text usernameText;
+
     String Smile = "\uD83D\uDE02";
     String Scry = "\uD83D\uDE2D";
     String Heart = "❤";
@@ -59,6 +79,28 @@ public class ChatRoom implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        usernameText.setText(Search.username);
+
+        smile.setOnAction(event -> {
+            chatpageBox.appendText( EmojiParser.parseToUnicode(Smile));
+        });
+
+        cry.setOnAction(event -> {
+            chatpageBox.appendText( EmojiParser.parseToUnicode(Scry));
+        });
+
+        angry.setOnAction(event -> {
+            chatpageBox.appendText( EmojiParser.parseToUnicode(Angry));
+        });
+
+        fear.setOnAction(event -> {
+            chatpageBox.appendText( EmojiParser.parseToUnicode(Fear));
+        });
+
+        heart.setOnAction(event -> {
+            chatpageBox.appendText( EmojiParser.parseToUnicode(Heart));
+        });
+        System.out.println();
 
         backButton.setOnAction(event -> {
             try {
@@ -85,11 +127,32 @@ public class ChatRoom implements Initializable {
         });
 
         sendButton.setOnAction(event -> {
-            Server.sendMessage(sendmessageTextField.getText());
+            new Thread(() -> {
+                String message = sendmessageTextField.getText();
+                String daate = datee.split(" ")[3];
+                try {
+                    messageDataBase.addMessage(Login.username,Search.username,message,"text",datee,datee.split(" ")[3]);
+                    Server.dataOutput.writeUTF(message);
+                    Server.dataOutput.writeUTF(daate);
+                    chatpageBox.appendText(message + "   ");
+                    chatpageBox.appendText(daate + "\n");
+                    sendmessageTextField.setText("");
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }).start();
         });
+
+        new Thread(() -> {
+            try {
+                chatpageBox.appendText(Server.dataInput.readUTF());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }).start();
     }
 
-    public void show (String s) {
-        chatpageBox.setText(s);
-    }
+
 }

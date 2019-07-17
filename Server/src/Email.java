@@ -9,9 +9,9 @@ public class Email
 {
     private int port = 465;
     private String host = "smtp.gmail.com";
-    private String from = "78mohammadhossein@gmail.com";
-    private String username = "78mohammadhossein@gmail.com";
-    private String password = "1378mh1378";
+    private String from = "9798ap@gmail.com";
+    private String username = "9798ap@gmail.com";
+    private String password = "9798ap9798ap";
     private Portocol portocol = Portocol.SMTPS;
     private int code;
 
@@ -61,6 +61,7 @@ public class Email
         }
 
     }
+
     public int createCode(){
         code = new Random().nextInt(99999-10000+1) + 10000;
         return code;

@@ -62,7 +62,7 @@
             <Font size="35.0" />
          </font>
       </Label>
-      <Button fx:id="choosephotoButton" layoutX="304.0" layoutY="228.0" mnemonicParsing="false" style="-fx-background-color: ;" text="Photoaddress :">
+      <Button fx:id="choosephotoButton" layoutX="304.0" layoutY="228.0" mnemonicParsing="false" text="Photoaddress :">
          <font>
             <Font size="15.0" />
          </font>
