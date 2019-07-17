@@ -9,9 +9,9 @@ public class Email
 {
     private int port = 465;
     private String host = "smtp.gmail.com";
-    private String from = "h80alireza@gmail.com";
-    private String username = "h80alireza@gmail.com";
-    private String password = "1380@1380";
+    private String from = "9798ap@gmail.com";
+    private String username = "9798ap@gmail.com";
+    private String password = "9798ap9798ap";
     private Portocol portocol = Portocol.SMTPS;
     private int code;
 

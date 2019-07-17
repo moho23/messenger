@@ -11,11 +11,11 @@ public class MessageDataBase {
         connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=mh", "postgres", "gffkke07");
     }
 
-    public void addMessage (String sender, String receiver, String message, String type,String date, String time) throws Exception {
+    public void addMessage (String sender, String message, String receiver, String type,String date, String time) throws Exception {
         preparedStatement = connection.prepareStatement("insert into public.messagedb  values (?,?,?,?,?,?)");
         preparedStatement.setString(1, sender);
-        preparedStatement.setString(2, receiver);
-        preparedStatement.setString(3, message);
+        preparedStatement.setString(3, receiver);
+        preparedStatement.setString(2, message);
         preparedStatement.setString(4, type);
         preparedStatement.setString(5, date);
         preparedStatement.setString(6, time);

@@ -41,7 +41,7 @@ public class Verfication implements Initializable {
         email.createCode();
         email.sendMail(Signup.email,"Verification Code", String.valueOf(email.getCode()));
         verifyButton.setOnAction(event -> {
-            if (verificationcodePasswordField.getText().equals(email.getCode())) {
+            if (verificationcodePasswordField.getText().equals(String.valueOf(email.getCode()))) {
                 User user = new User(Signup.firstname, Signup.lastname, Signup.number, Signup.photoAddress, Signup.password, Signup.username, Signup.status, Signup.email);
                 try {
                     UserDataBase userDataBase = new UserDataBase();
