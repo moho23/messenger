@@ -19,6 +19,7 @@ public class ChatRoom implements Initializable {
     Date date = new Date();
     String datee = date.toString();
     MessageDataBase messageDataBase;
+    String daate = datee.split(" ")[3];
 
     {
         try {
@@ -125,8 +126,6 @@ public class ChatRoom implements Initializable {
         sendButton.setOnAction(event -> {
             new Thread(() -> {
                 String message = sendmessageTextField.getText();
-                String daate = datee.split(" ")[3];
-
                 try {
 //                    MessageDataBase messageDataBase = new MessageDataBase();
                     messageDataBase.addMessage(Login.username,message,Search.username,"text",datee,datee.split(" ")[3]);
@@ -146,7 +145,8 @@ public class ChatRoom implements Initializable {
 
         new Thread(() -> {
             try {
-                chatpageBox.appendText(Client.dataInput.readUTF());
+                chatpageBox.appendText(Client.dataInput.readUTF() + "   ");
+                chatpageBox.appendText(daate + "\n");
             } catch (IOException e) {
                 e.printStackTrace();
             }
