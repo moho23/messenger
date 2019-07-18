@@ -134,9 +134,9 @@ public class ChatRoom implements Initializable {
                 try {
                     messageDataBase.addMessage(Login.username,Search.username,message,"text",datee,datee.split(" ")[3]);
                     Server.dataOutput.writeUTF(message);
-                    Server.dataOutput.writeUTF(daate);
-                    chatpageBox.appendText(message + "   ");
-                    chatpageBox.appendText(daate + "\n");
+                    Server.dataOutput.writeUTF(new Date().toString().split(" ")[3]);
+                    chatpageBox.appendText(message + "  ");
+                    chatpageBox.appendText(new Date().toString().split(" ")[3] + "\n");
                     sendmessageTextField.setText("");
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -148,8 +148,9 @@ public class ChatRoom implements Initializable {
 
         new Thread(() -> {
             try {
-                chatpageBox.appendText(Server.dataInput.readUTF() + "   ");
-                chatpageBox.appendText(daate + "\n");
+                while (true) {
+                    chatpageBox.appendText(Server.dataInput.readUTF() + "\n");
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
